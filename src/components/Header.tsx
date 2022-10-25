@@ -30,7 +30,7 @@ const Header: React.FC = () => {
                         <li><Link to="/teachers">Teachers</Link></li>
                         <li><Link to="/gallery">Gallery</Link></li>
                         <li><Link to="/reviews">Reviews</Link></li>
-                        <li><Link to="/contact">Contacts</Link></li>
+                        <li><Link to="/contacts">Contacts</Link></li>
                     </ul>
                     <a href="#" className="btn__liner">Sign up</a>
                     <div className="footer__soc">
