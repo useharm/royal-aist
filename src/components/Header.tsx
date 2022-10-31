@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { svgs } from '../assets/svgs';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../redux/store';
+import { menuSelector, setOpenMobile } from '../redux/slices/menuSlice';
+import { useSelector } from 'react-redux';
 
 const Header: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const { isOpenMobile } = useSelector(menuSelector);
     return (
         <header>
     <div className="container">
@@ -14,14 +19,14 @@ const Header: React.FC = () => {
                     </svg>
                 </a>
             </div>
-            <div onClick={() => alert('CLICKED')} className="open-menu">
+            <div onClick={() => isOpenMobile ? dispatch(setOpenMobile(false)) : dispatch(setOpenMobile(true))} className={isOpenMobile ? 'open-menu close-menu' : 'open-menu'}> {/* close-menu */}
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <div className="for-mobile-bg"></div>
-            <div className="menu-cnt mobile-bg-1">
+            <div className={isOpenMobile ? 'menu-cnt mobile-bg-1 transition-menu' : 'menu-cnt mobile-bg-1'}>
                 <div className="sidenav">
                     <ul>
                         <li><Link to="/">Аbout</Link></li>

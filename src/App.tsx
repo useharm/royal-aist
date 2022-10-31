@@ -10,10 +10,14 @@ import Teachers from "./pages/Teachers";
 import Gallery from "./pages/Gallery";
 import Reviews from "./pages/Reviews";
 import Contacts from "./pages/Contacts";
+import { useSelector } from "react-redux";
+import { menuSelector } from "./redux/slices/menuSlice";
+import 'swiper/css/bundle';
 
 const App: React.FC = () => {
+  const { isOpenMobile } = useSelector(menuSelector);
   return (
-    <div>
+    <div className={isOpenMobile ? 'body_fix' : ''}> {/* body_fix */}
       <Header />
       <Routes>
         <Route path='/' element={<Main />}/>

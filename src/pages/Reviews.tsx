@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { svgs } from '../assets/svgs';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Pagination } from "swiper";
+import ModalReview from '../components/modals/ModalReview';
+import { useSelector } from 'react-redux';
+import { menuSelector, setOpenReview } from '../redux/slices/menuSlice';
+import { useAppDispatch } from '../redux/store';
 
 const Reviews: React.FC = () => {
+    const { isOpenReview } = useSelector(menuSelector);
+    const dispatch = useAppDispatch();
     return (
         <div>
+            {/* {isOpenReview ? <ModalReview /> : null} */}
+            <ModalReview />
             <section className="all__marg">
     <div className="container">
         <div className="reviews__main">
             <h2>what parents say
                 about us</h2>
             <div className="swiper reviews__slider">
-                <div className="swiper-wrapper">
-                    <div className="swiper-slide">
+                <Swiper pagination={{ clickable: true }} modules={[Pagination]}>
+                    <SwiperSlide>
                         <div className="reviews__info">
                             <p>
                                 I want to express my gratitude to you once again! You have
@@ -20,8 +30,8 @@ const Reviews: React.FC = () => {
                             </p>
                             <span>Maria Sofarova</span>
                         </div>
-                    </div>
-                    <div className="swiper-slide">
+                        </SwiperSlide>
+                    <SwiperSlide>
                         <div className="reviews__info">
                             <p>
                                 My daughter Maryam started going to Stork Academy every day for 3 months.
@@ -30,8 +40,8 @@ const Reviews: React.FC = () => {
                             </p>
                             <span>Irina Maksimova</span>
                         </div>
-                    </div>
-                    <div className="swiper-slide">
+                        </SwiperSlide>
+                    <SwiperSlide>
                         <div className="reviews__info">
                             <p>
                                 I think that for children who go to English-speaking kindergartens, the Russian-speaking
@@ -41,12 +51,12 @@ const Reviews: React.FC = () => {
                             </p>
                             <span>Anna Bobrenko</span>
                         </div>
-                    </div>
-                </div>
+                        </SwiperSlide>
+                </Swiper>
                 <div className="swiper-pagination"></div>
             </div>
             <div className="reviews__btn">
-                <a href="#" className="btn">Leave a review</a>
+                <button className="btn" onClick={() => dispatch(setOpenReview(true))}>Leave a review</button>
             </div>
         </div>
     </div>
