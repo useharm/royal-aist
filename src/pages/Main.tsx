@@ -2,6 +2,7 @@ import React from 'react';
 import { svgs } from '../assets/svgs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import SignUpBlock from '../components/SignUpBlock';
 
 const Main: React.FC = () => {
 
@@ -97,19 +98,7 @@ const Main: React.FC = () => {
         </div>
     </div>
 </section>
-<section>
-    <div className="container">
-        <div className="trial-child">
-            <div className="trial-child__name">
-                <h3>sign up your child for a trial DAY</h3>
-                <a href="#" className="btn">Sign up</a>
-            </div>
-            <div className="trial-child__photo">
-                <img src={svgs['./eniml.png']} alt="" />
-            </div>
-        </div>
-    </div>
-</section>
+<SignUpBlock />
 <section>
     <div className="our-approach">
         <div className="container">
@@ -274,19 +263,7 @@ const Main: React.FC = () => {
         </div>
     </div>
 </section>
-<section>
-    <div className="container">
-        <div className="trial-child">
-            <div className="trial-child__name">
-                <h3>sign up your child for a trial DAY</h3>
-                <a href="#" className="btn">Sign up</a>
-            </div>
-            <div className="trial-child__photo">
-                <img src={svgs['./eniml.png']} alt="" />
-            </div>
-        </div>
-    </div>
-</section>
+<SignUpBlock />
         </div>
     );
 };

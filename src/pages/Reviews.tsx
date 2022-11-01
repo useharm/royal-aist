@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { svgs } from '../assets/svgs';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Pagination } from "swiper";
 import ModalReview from '../components/modals/ModalReview';
-import { useSelector } from 'react-redux';
-import { menuSelector, setOpenReview } from '../redux/slices/menuSlice';
+import { setOpenReview } from '../redux/slices/menuSlice';
 import { useAppDispatch } from '../redux/store';
+import SignUpBlock from '../components/SignUpBlock';
 
 const Reviews: React.FC = () => {
-    const { isOpenReview } = useSelector(menuSelector);
     const dispatch = useAppDispatch();
     return (
         <div>
@@ -63,19 +62,7 @@ const Reviews: React.FC = () => {
 </section>
 
 
-<section>
-    <div className="container">
-        <div className="trial-child">
-            <div className="trial-child__name">
-                <h3>sign up your child for a trial DAY</h3>
-                <a href="#" className="btn">Sign up</a>
-            </div>
-            <div className="trial-child__photo">
-                <img src={svgs['./eniml.png']} alt="" />
-            </div>
-        </div>
-    </div>
-</section>
+<SignUpBlock />
         </div>
     );
 };

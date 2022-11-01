@@ -91,6 +91,7 @@
 }
 .entrance__cnt{
     margin-top: 35px;
+    min-height: 137px;
 }
 
 .mod__done{
@@ -138,7 +139,8 @@
     color: #374F8F;
 }
 .modal-enroll{
-    margin-top: 65px;
+    margin-top: 35px;
+    min-height: 137px;
 }
 .modal-enroll>span{
     font-weight: 500;
@@ -175,6 +177,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.modal__button-first{
+    justify-content: right !important;
 }
 .block-checked{
     margin-top: 13px;

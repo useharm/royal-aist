@@ -1,5 +1,6 @@
 import React from 'react';
 import { svgs } from '../assets/svgs';
+import SignUpBlock from '../components/SignUpBlock';
 
 const Teachers: React.FC = () => {
     return (
@@ -177,19 +178,7 @@ const Teachers: React.FC = () => {
         </div>
     </div>
 </section>
-<section>
-    <div className="container">
-        <div className="trial-child">
-            <div className="trial-child__name">
-                <h3>sign up your child for a trial DAY</h3>
-                <a href="#" className="btn">Sign up</a>
-            </div>
-            <div className="trial-child__photo">
-                <img src={svgs['./eniml.png']} alt="" />
-            </div>
-        </div>
-    </div>
-</section>
+<SignUpBlock />
         </div>
     );
 };

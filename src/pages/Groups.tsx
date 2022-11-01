@@ -1,5 +1,6 @@
 import React from 'react';
 import { svgs } from '../assets/svgs';
+import SignUpBlock from '../components/SignUpBlock';
 
 const Groups: React.FC = () => {
     return (
@@ -89,6 +90,7 @@ const Groups: React.FC = () => {
         </div>
     </div>
 </section>
+<SignUpBlock />
         </div>
     );
 };

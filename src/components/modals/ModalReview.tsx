@@ -7,8 +7,6 @@ const ModalReview: React.FC = () => {
     const { isOpenReview } = useSelector(menuSelector);
     const dispatch = useAppDispatch();
     return (
-        <div>
-             <button data-val="modal" className="open_modal btn">Send</button>
     <div id="modal" className={isOpenReview ? 'modal modal-active' : 'modal'} /* style={isOpenReview ? {display: 'block'} : {display: 'none'}} */>
         <div className={isOpenReview ? 'modal-content modal-content-active' : 'modal-content'}>
             <div className="modal-registration">
@@ -32,7 +30,6 @@ const ModalReview: React.FC = () => {
             </div>
         </div>
     </div>
-        </div>
     );
 };
 
