@@ -17,7 +17,7 @@ import 'swiper/css/bundle';
 const App: React.FC = () => {
   const { isOpenMobile } = useSelector(menuSelector);
   return (
-    <div className={isOpenMobile ? 'body_fix' : ''}> {/* body_fix */}
+    <div  className={isOpenMobile ? 'body_fix' : ''}>
       <Header />
       <Routes>
         <Route path='/' element={<Main />}/>

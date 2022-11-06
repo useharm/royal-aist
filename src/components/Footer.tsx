@@ -1,31 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { svgs } from '../assets/svgs';
 
 const Footer: React.FC = () => {
+    function smoothScroll() {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
+    }
     return (
         <footer>
     <div className="container">
         <div className="footer__main">
             <div className="footer__logo">
-                <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 280 348">
-                        <image id="Слой_1" data-name="Слой 1" width="100%" height="100%" />
-                    </svg>
-                </a>
+            <Link to="/" onClick={() => smoothScroll()}>
+                        <img src={svgs['./logo.png']}/>
+                </Link>
             </div>
             <div className="footer__menu">
                 <ul>
-                    <li><a href="#">Аbout</a></li>
-                    <li><a href="#">Lessons</a></li>
-                    <li><a href="#">Groups</a></li>
+                    <li><Link to="/" onClick={() => smoothScroll()}>Аbout</Link></li>
+                    <li><Link to="lessons" onClick={() => smoothScroll()}>Lessons</Link></li>
+                    <li><Link to="groups" onClick={() => smoothScroll()}>Groups</Link></li>
                 </ul>
             </div>
             <div className="footer__menu">
                 <ul>
-                    <li><a href="#">Teachers</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Reviews</a></li>
-                </ul>
+                    <li><Link to="teachers" onClick={() => smoothScroll()}>Teachers</Link></li>
+                    <li><Link to="gallery" onClick={() => smoothScroll()}>Gallery</Link></li>
+                    <li><Link to="reviews" onClick={() => smoothScroll()}>Reviews</Link></li>
+            </ul>
             </div>
             <div className="footer__soc">
                 <ul>

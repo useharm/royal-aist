@@ -1,11 +1,10 @@
 import React from 'react';
-import { svgs } from '../assets/svgs';
 import SignUpBlock from '../components/SignUpBlock';
 
 const Lessons: React.FC = () => {
     return (
         <div>
-            <section className="all__marg">
+<section className="all__marg">
     <div className="container">
         <div className="lessons__main">
             <div className="lessons__center">

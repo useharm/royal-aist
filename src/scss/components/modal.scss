@@ -99,7 +99,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 402px;
+    min-height: 312px;
 }
 .mod__done__tit{
     display: flex;
@@ -152,11 +152,17 @@
     display: flex;
     align-items: center;
     margin-top: 18px;
+    user-select: none;
 }
 .decrement span, .increment span{
     color: #374F8F;
     font-size: 28px;
     cursor: pointer;
+}
+.decrement-inactive {
+    pointer-events: none;
+    transition: 0.5s;
+    opacity: 0.3;
 }
 .add-catalog-val-count label{
     display: flex;

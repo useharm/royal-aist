@@ -8,7 +8,7 @@ const Gallery: React.FC = () => {
             <section className="all__marg">
     <div className="container">
         <div className="pages__gallery">
-            <a href="assets/img/pexels1.jpg" className="gallery__box" data-fancybox="gallery">
+            <a href={svgs['./pexels1.jpg']} className="gallery__box" data-fancybox="gallery">
                 <img src={svgs['./pexels1.jpg']} alt="" />
             </a>
             <a href="assets/img/pexels2.jpg" className="gallery__box" data-fancybox="gallery">

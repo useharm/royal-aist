@@ -1,13 +1,15 @@
 import React from 'react';
 import { svgs } from '../assets/svgs';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import ModalAist from '../components/modals/ModalAist';
 import SignUpBlock from '../components/SignUpBlock';
+import { setOpenSignUp } from '../redux/slices/menuSlice';
+import { useAppDispatch } from '../redux/store';
 
 const Main: React.FC = () => {
-
+    const dispatch = useAppDispatch();
     return (
         <div>
+            <ModalAist/>
 <section className="all__marg">
     <div className="container">
         <div className="royal__main">
@@ -20,7 +22,7 @@ const Main: React.FC = () => {
                 </p>
                 <div className="royal__btn">
                     <span>Register your child for one <b>free trial day!</b></span>
-                    <a href="#" className="btn">Sign up</a>
+                    <button onClick={() => dispatch(setOpenSignUp(true))} className="btn">Sign up</button>
                 </div>
             </div>
             <div className="royal__cnt">

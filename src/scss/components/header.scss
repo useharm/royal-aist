@@ -133,20 +133,11 @@ header{
 
 
 @media (max-width: 992px) {
-    .menu-width {
-        width: 0% !important;
-        -webkit-transition: all 0.5s ease 0s !important;
-        -o-transition: all 0.5s ease 0s !important;
-        transition: all 0.5s ease 0s !important;
-    }
     .transition-menu {
         width: 375px !important;
-        -webkit-transition: all 0.5s ease 0s !important;
-        -o-transition: all 0.5s ease 0s !important;
-        transition: all 0.5s ease 0s !important;
-    }
-    .view-addresses_info .online-appointment_sel {
-        margin-bottom: 10px;
+        /* -webkit-transition: all 0.5s ease 0s !important;
+        -o-transition: all 0.5s ease 0s !important; */
+        /* transition: all 2s ease 0s !important; */
     }
     .open-menu span:nth-child(2), .open-menu span:nth-child(3) {
         top: 12px;
@@ -173,6 +164,7 @@ header{
         align-items: flex-end;
         justify-content: flex-start;
         background: #E5F5F5;
+        transition: all 0.35s ease-out;
     }
     .sidenav > ul {
         flex-direction: column;

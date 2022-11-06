@@ -1,10 +1,12 @@
 import React from 'react';
 import { svgs } from '../assets/svgs';
-import SignUpBlock from '../components/SignUpBlock';
+import ButtonBlock from '../components/ButtonBlock/ButtonBlock';
+import ModalAist from '../components/modals/ModalAist'
 
 const Groups: React.FC = () => {
     return (
         <div>
+            <ModalAist/>
             <section className="all__marg">
     <div className="container">
         <div className="groups__main">
@@ -28,7 +30,7 @@ const Groups: React.FC = () => {
                             </li>
                         </ul>
                         <div className="groups__login">
-                            <a href="#" className="btn">Sign up</a>
+                        <ButtonBlock />
                             <div className="groups__price">
                                 <span>1100$ </span>
                                 <p>
@@ -54,7 +56,7 @@ const Groups: React.FC = () => {
                             </li>
                         </ul>
                         <div className="groups__login">
-                            <a href="#" className="btn">Sign up</a>
+                            <ButtonBlock />
                             <div className="groups__price">
                                 <span>980$</span>
                                 <p>per month</p>
@@ -78,7 +80,7 @@ const Groups: React.FC = () => {
                             </li>
                         </ul>
                         <div className="groups__login">
-                            <a href="#" className="btn">Sign up</a>
+                        <ButtonBlock />
                             <div className="groups__price">
                                 <span>900$</span>
                                 <p>per month</p>
@@ -90,7 +92,6 @@ const Groups: React.FC = () => {
         </div>
     </div>
 </section>
-<SignUpBlock />
         </div>
     );
 };

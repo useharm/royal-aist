@@ -1,18 +1,20 @@
-import React from 'react';
-import { svgs } from '../assets/svgs';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper";
 import ModalReview from '../components/modals/ModalReview';
 import { setOpenReview } from '../redux/slices/menuSlice';
 import { useAppDispatch } from '../redux/store';
 import SignUpBlock from '../components/SignUpBlock';
+import { useSelector } from 'react-redux';
+import { reviewSelector } from '../redux/slices/reviewSlice';
 
 const Reviews: React.FC = () => {
     const dispatch = useAppDispatch();
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const { reviews } = useSelector(reviewSelector);
     return (
         <div>
-            {/* {isOpenReview ? <ModalReview /> : null} */}
-            <ModalReview />
+            <ModalReview buttonRef={buttonRef}/>
             <section className="all__marg">
     <div className="container">
         <div className="reviews__main">
@@ -20,42 +22,19 @@ const Reviews: React.FC = () => {
                 about us</h2>
             <div className="swiper reviews__slider">
                 <Swiper pagination={{ clickable: true }} modules={[Pagination]}>
-                    <SwiperSlide>
+                    {reviews.map((item, index) => (<SwiperSlide key={index}>
                         <div className="reviews__info">
                             <p>
-                                I want to express my gratitude to you once again! You have
-                                a wonderful kindergarten and an amazing teaching staff!
-                                Ilyasik has such positive changes, the whole family can't stop admiring you all!
+                                {item.title}
                             </p>
-                            <span>Maria Sofarova</span>
+                            <span>{item.name}</span>
                         </div>
-                        </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="reviews__info">
-                            <p>
-                                My daughter Maryam started going to Stork Academy every day for 3 months.
-                                My original goal was at least adapted to understand the command in Russian,
-                                but how happy I was even now at home.
-                            </p>
-                            <span>Irina Maksimova</span>
-                        </div>
-                        </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="reviews__info">
-                            <p>
-                                I think that for children who go to English-speaking kindergartens, the Russian-speaking
-                                winter camp in Aist
-                                is a great opportunity to keep their 2nd language. The center is located in its own
-                                separate villa with a good area
-                            </p>
-                            <span>Anna Bobrenko</span>
-                        </div>
-                        </SwiperSlide>
+                        </SwiperSlide>))}
                 </Swiper>
                 <div className="swiper-pagination"></div>
             </div>
             <div className="reviews__btn">
-                <button className="btn" onClick={() => dispatch(setOpenReview(true))}>Leave a review</button>
+                <button ref={buttonRef} className="btn" onClick={() => dispatch(setOpenReview(true))}>Leave a review</button>
             </div>
         </div>
     </div>

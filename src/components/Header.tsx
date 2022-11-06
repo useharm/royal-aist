@@ -1,32 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { svgs } from '../assets/svgs';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../redux/store';
-import { menuSelector, setOpenMobile } from '../redux/slices/menuSlice';
+import { menuSelector, setOpenMobile, setOpenSignUp } from '../redux/slices/menuSlice';
 import { useSelector } from 'react-redux';
+
+type PopupWindow = MouseEvent & {
+    path: Node[]
+  }
 
 const Header: React.FC = () => {
     const dispatch = useAppDispatch();
     const { isOpenMobile } = useSelector(menuSelector);
+    const modalRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLDivElement>(null);
+    function bodyClick(e: MouseEvent) {
+        const _e = e as PopupWindow;
+        if (modalRef.current && buttonRef.current && !_e.path.includes(modalRef.current) && !_e.path.includes(buttonRef.current)) {
+          dispatch(setOpenMobile(false));
+        }
+      }
+    useEffect(() => {
+      document.body.addEventListener('click', bodyClick);
+      return () => document.body.removeEventListener('click', bodyClick)
+      }, [])
     return (
         <header>
     <div className="container">
         <div className="header__main">
             <div className="header__logo">
-                <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 280 348">
-                        <image id="Слой_1" data-name="Слой 1" width="100%" height="100%" />
-                    </svg>
-                </a>
+            <Link to="/">
+                        <img src={svgs['./logo.png']}/>
+                </Link>
             </div>
-            <div onClick={() => isOpenMobile ? dispatch(setOpenMobile(false)) : dispatch(setOpenMobile(true))} className={isOpenMobile ? 'open-menu close-menu' : 'open-menu'}> {/* close-menu */}
+            <div ref={buttonRef} onClick={() => isOpenMobile ? dispatch(setOpenMobile(false)) : dispatch(setOpenMobile(true))} className={isOpenMobile ? 'open-menu close-menu' : 'open-menu'}>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <div className="for-mobile-bg"></div>
-            <div className={isOpenMobile ? 'menu-cnt mobile-bg-1 transition-menu' : 'menu-cnt mobile-bg-1'}>
+            <div ref={modalRef} className={isOpenMobile ? 'menu-cnt  transition-menu' : 'menu-cnt '}>
                 <div className="sidenav">
                     <ul>
                         <li><Link to="/">Аbout</Link></li>
@@ -37,7 +51,7 @@ const Header: React.FC = () => {
                         <li><Link to="/reviews">Reviews</Link></li>
                         <li><Link to="/contacts">Contacts</Link></li>
                     </ul>
-                    <a href="#" className="btn__liner">Sign up</a>
+                    <button onClick={() => dispatch(setOpenSignUp(true))} className="btn__liner">Sign up</button>
                     <div className="footer__soc">
                         <ul>
                             <li>

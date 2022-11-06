@@ -1,9 +1,12 @@
 import React from 'react';
 import { svgs } from '../assets/svgs';
+import ModalAist from '../components/modals/ModalAist';
+
 
 const Contacts: React.FC = () => {
     return (
         <div>
+            <ModalAist />
             <section className="all__marg">
     <div className="container">
         <div className="contact__main">

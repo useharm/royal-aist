@@ -1,20 +1,14 @@
 import React from 'react';
-import { setOpenSignUp } from '../../../redux/slices/menuSlice';
-import { useAppDispatch } from '../../../redux/store';
 import { Swiper as SwiperType } from "swiper";
 
-type PropsType = {
-    swiperRef: SwiperType
+type propsType = {
+    swiperRef: React.MutableRefObject<SwiperType | undefined>;
+    count: number;
+    setCount: React.Dispatch<React.SetStateAction<number>>;
 }
-
-const ModalAistOne: React.FC<any> = ({swiperRef}) => {
-    const dispatch = useAppDispatch();
+const ModalAistOne: React.FC<propsType> = ({swiperRef, count, setCount}) => {
     return (
             <div>
-            {/* <div id="modal-aist" className='modal modal-active'>
-        <div className='modal-content modal-content-active'>
-            <div className="modal-registration modal-sing">
-                <div className="close" onClick={() => dispatch(setOpenSignUp(false))}></div> */}
                 <div className="modal-sing__numb">
                     <strong>Sign up at the Aist center</strong>
                     <span>1/3</span>
@@ -23,15 +17,15 @@ const ModalAistOne: React.FC<any> = ({swiperRef}) => {
                     <span>How many children do you want to enroll?</span>
                     <div className="add-catalog-for-shop">
                         <div className="add-catalog-val-count">
-                            <div className="decrement">
-                                <span>-</span>
+                            <div className={(count <= 1 ? 'decrement decrement-inactive' : 'decrement')}>
+                                <span onClick={() => (count > 1 ? setCount(count - 1) : null)}>-</span>
                             </div>
                             <label>
                                 <input type="text" className="catalog-count-value"
-                                       data-mane="16689" value="1" />
+                                       data-mane="16689" value={count} />
                             </label>
                             <div className="increment">
-                                <span>+</span>
+                                <span onClick={() => setCount(count + 1)}>+</span>
                             </div>
                         </div>
                     </div>
@@ -40,9 +34,6 @@ const ModalAistOne: React.FC<any> = ({swiperRef}) => {
                     <button className="btn__liner" style={{display: 'none'}}>Back</button>
                     <button className="btn" onClick={() => swiperRef.current?.slideNext()}>Next</button>
                 </div>
-            {/* </div>
-        </div>
-    </div> */}
     </div>
     );
 };

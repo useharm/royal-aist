@@ -5,8 +5,8 @@ import { RootState } from '../store';
 
 interface menuType {
     isOpenMobile: boolean;
-    isOpenReview: boolean,
-    isOpenSignUp: boolean,
+    isOpenReview: boolean;
+    isOpenSignUp: boolean;
 }
 
 const initialState: menuType = {
@@ -27,9 +27,8 @@ const menuSlice = createSlice({
         },
         setOpenSignUp: (state, action: PayloadAction<boolean>) => {
             state.isOpenSignUp = action.payload;
-    }
-}
-})
+        },
+    }})
 
 export const menuSelector = (state: RootState) => state.menuSlice;
 export const { setOpenMobile, setOpenReview, setOpenSignUp } = menuSlice.actions;
