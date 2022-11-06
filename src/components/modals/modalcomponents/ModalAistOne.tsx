@@ -22,7 +22,7 @@ const ModalAistOne: React.FC<propsType> = ({swiperRef, count, setCount}) => {
                             </div>
                             <label>
                                 <input type="text" className="catalog-count-value"
-                                       data-mane="16689" value={count} />
+                                       data-mane="16689" value={count} readOnly/>
                             </label>
                             <div className="increment">
                                 <span onClick={() => setCount(count + 1)}>+</span>
