@@ -1,15 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { svgs } from '../assets/svgs';
 import ModalAist from '../components/modals/ModalAist';
+import ModalVideo from '../components/modals/ModalVideo';
 import SignUpBlock from '../components/SignUpBlock';
-import { setOpenSignUp } from '../redux/slices/menuSlice';
+import { menuSelector, setOpenSignUp, setOpenVideo } from '../redux/slices/menuSlice';
 import { useAppDispatch } from '../redux/store';
 
 const Main: React.FC = () => {
     const dispatch = useAppDispatch();
+    const { isOpenVideo } = useSelector(menuSelector);
     return (
         <div>
             <ModalAist/>
+            <ModalVideo />
 <section className="all__marg">
     <div className="container">
         <div className="royal__main">
@@ -27,10 +31,9 @@ const Main: React.FC = () => {
             </div>
             <div className="royal__cnt">
                 <div className="royal__photo">
-                    <a className="play__bot popup-youtube video-click__icon"
-                       href="https://www.youtube.com/watch?v=AMLWvTklvHs" data-uk-lightbox="">
+                    <div onClick={() => dispatch(setOpenVideo(true))}>
                         <img src={svgs['./image2179.jpg']} alt="" />
-                    </a>
+                    </div>
                 </div>
                 <div className="royal__leng">
                     <a href="#">Russian</a>

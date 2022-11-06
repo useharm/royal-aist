@@ -45,6 +45,62 @@
     opacity: 1;
     pointer-events: all;
 }
+.modal-video {
+    display: block;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    overflow: auto;
+    -webkit-opacity: 0;
+    -ms-opacity: 0;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+    .modal-video-content {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        transition: 0.3s;
+    }
+    .modal-video-content-active {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+.modal-video-active {
+    -webkit-opacity: 1;
+    -ms-opacity: 1;
+    opacity: 1;
+    pointer-events: all;
+}
+.modal-video-registration {
+    width: 800px;
+    position: relative;
+    padding: 45px;
+    background: #E5F5F5;
+    border-radius: 10px;
+    font-size: 31px;
+    line-height: 37px;
+}
 .close{
     position: absolute;
     top: 10px;
@@ -74,20 +130,18 @@
     width: 2px;
     height: 100%;
 }
-.modal-registration{
-    max-width: 482px;
-    width: 100%;
+.modal-registration {
     position: relative;
     padding: 45px;
     background: #E5F5F5;
     border-radius: 10px;
 }
-.modal__btn{
-    margin-top: 50px;
-}
 .modal-registration h3 {
     font-size: 31px;
     line-height: 37px;
+}
+.modal__btn{
+    margin-top: 50px;
 }
 .entrance__cnt{
     margin-top: 35px;
@@ -122,6 +176,10 @@
     line-height: 26px;
     text-transform: uppercase;
     color: #374F8F;
+}
+.modal-video-sing{
+    width: 940px;
+    height: 568px;
 }
 .modal-sing{
     max-width: 536px;
@@ -237,38 +295,21 @@
     border: solid #374F8F;;
     border-width: 0 2px 2px 0;
 }
+@media (max-width: 991px){
+    .modal-video-sing{
+        width: 688px;
+        height: 427px;
+    }
+}
+@media (max-width: 760px){
+    .modal-video-sing{
+        width: 496px;
+        height: 319px;
+    }
+}
 @media (max-width: 500px){
-    .modal-registration {
-        max-width: 343px;
-        padding: 35px 15px;
-    }
-    .modal-registration h3 {
-        font-size: 21px;
-        line-height: 27px;
-    }
-    .contact__inp label input {
-        height: 50px;
-        font-size: 16px;
-        line-height: 22px;
-    }
-    .mod__done {
-        height: 342px;
-    }
-    .modal-sing__numb strong, .modal-sing__numb span {
-        font-size: 18px;
-        line-height: 23px;
-    }
-    .modal-enroll {
-        margin-top: 45px;
-    }
-    .modal__button {
-        margin-top: 40px;
-    }
-    .modal-sing {
-        max-width: 350px;
-    }
-    .modal-enroll>span {
-        font-size: 18px;
-        line-height: 20px;
+    .modal-video-sing{
+        width: 438px;
+        height: 285px;
     }
 }

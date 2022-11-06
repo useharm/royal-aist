@@ -7,12 +7,14 @@ interface menuType {
     isOpenMobile: boolean;
     isOpenReview: boolean;
     isOpenSignUp: boolean;
+    isOpenVideo: boolean;
 }
 
 const initialState: menuType = {
     isOpenMobile: false,
     isOpenReview: false,
     isOpenSignUp: false,
+    isOpenVideo: false,
 }
 
 const menuSlice = createSlice({
@@ -28,8 +30,11 @@ const menuSlice = createSlice({
         setOpenSignUp: (state, action: PayloadAction<boolean>) => {
             state.isOpenSignUp = action.payload;
         },
+        setOpenVideo: (state, action: PayloadAction<boolean>) => {
+            state.isOpenVideo = action.payload;
+        },
     }})
 
 export const menuSelector = (state: RootState) => state.menuSlice;
-export const { setOpenMobile, setOpenReview, setOpenSignUp } = menuSlice.actions;
+export const { setOpenMobile, setOpenReview, setOpenSignUp, setOpenVideo } = menuSlice.actions;
 export default menuSlice.reducer;

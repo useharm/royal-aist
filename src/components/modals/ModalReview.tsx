@@ -36,7 +36,7 @@ const ModalReview: React.FC<any> = ({buttonRef}) => {
     return (
     <div id="modal" className={isOpenReview ? 'modal modal-active' : 'modal'}>
         <div className={isOpenReview ? 'modal-content modal-content-active' : 'modal-content'}>
-            <div ref={modalRef} className="modal-registration">
+            <div ref={modalRef} className="modal-registration modal-sing">
                 <div className="close" onClick={() => closeModal()}></div>
                 <Swiper modules={[Pagination]} spaceBetween={30} onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
