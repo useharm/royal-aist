@@ -27,6 +27,7 @@ const App: React.FC = () => {
         <Route path='gallery' element={<Gallery />}/>
         <Route path='reviews' element={<Reviews />}/>
         <Route path='contacts' element={<Contacts />}/>
+        <Route path='*' element={<Main />}/>
       </Routes>
       <Footer />
     </div>
