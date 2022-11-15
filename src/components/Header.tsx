@@ -43,13 +43,13 @@ const Header: React.FC = () => {
             <div ref={modalRef} className={isOpenMobile ? 'menu-cnt  transition-menu' : 'menu-cnt '}>
                 <div className="sidenav">
                     <ul>
-                        <li><Link to="/">Аbout</Link></li>
-                        <li><Link to="/lessons">Lessons</Link></li>
-                        <li><Link to="/groups">Groups</Link></li>
-                        <li><Link to="/teachers">Teachers</Link></li>
-                        <li><Link to="/gallery">Gallery</Link></li>
-                        <li><Link to="/reviews">Reviews</Link></li>
-                        <li><Link to="/contacts">Contacts</Link></li>
+                        <li><Link to="/" onClick={() => dispatch(setOpenMobile(false))}>Аbout</Link></li>
+                        <li><Link to="/lessons" onClick={() => dispatch(setOpenMobile(false))}>Lessons</Link></li>
+                        <li><Link to="/groups" onClick={() => dispatch(setOpenMobile(false))}>Groups</Link></li>
+                        <li><Link to="/teachers" onClick={() => dispatch(setOpenMobile(false))}>Teachers</Link></li>
+                        <li><Link to="/gallery" onClick={() => dispatch(setOpenMobile(false))}>Gallery</Link></li>
+                        <li><Link to="/reviews" onClick={() => dispatch(setOpenMobile(false))}>Reviews</Link></li>
+                        <li><Link to="/contacts" onClick={() => dispatch(setOpenMobile(false))}>Contacts</Link></li>
                     </ul>
                     <button onClick={() => dispatch(setOpenSignUp(true))} className="btn__liner">Sign up</button>
                     <div className="footer__soc">
