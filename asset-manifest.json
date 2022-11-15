@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/royal-aist/static/css/main.673c3f81.css",
+    "main.css": "/royal-aist/static/css/main.87a93816.css",
     "main.js": "/royal-aist/static/js/main.a0b851ea.js",
     "static/media/pexels8.jpg": "/royal-aist/static/media/pexels8.c3932e618621dab221f3.jpg",
     "static/media/pexels4.jpg": "/royal-aist/static/media/pexels4.478fcd2ee56dde89c308.jpg",
@@ -88,11 +88,11 @@
     "static/media/phone.svg": "/royal-aist/static/media/phone.fcc80f54165bd3b434aa.svg",
     "static/media/street.svg": "/royal-aist/static/media/street.66a7351ce79f6cdcc260.svg",
     "index.html": "/royal-aist/index.html",
-    "main.673c3f81.css.map": "/royal-aist/static/css/main.673c3f81.css.map",
+    "main.87a93816.css.map": "/royal-aist/static/css/main.87a93816.css.map",
     "main.a0b851ea.js.map": "/royal-aist/static/js/main.a0b851ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.673c3f81.css",
+    "static/css/main.87a93816.css",
     "static/js/main.a0b851ea.js"
   ]
 }
